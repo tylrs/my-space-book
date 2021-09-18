@@ -9,7 +9,7 @@ const App = () => {
         <h1>My Space Book</h1>
         <NavLink to='/my-liked'>My Liked Images</NavLink>
       </header>
-      
+      <Images />
     </main>
   );
 }
