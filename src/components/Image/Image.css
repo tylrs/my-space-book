@@ -1,0 +1,10 @@
+.space-image {
+    border: 1px solid black;
+    /* height: 80%;
+    width: 80%; */
+}
+
+.space-image > img {
+    height: 50%;
+    width: 50%;
+}
