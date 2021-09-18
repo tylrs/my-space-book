@@ -5,7 +5,7 @@ const Image = ({imageInfo}) => {
     const {url, title, date} = imageInfo;
 
     return (
-        <article className='space-image'>
+        <article className='space-image-box'>
             <img src={url}/>
             <caption>{title}</caption>
             <caption>{date}</caption>
