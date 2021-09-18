@@ -9,6 +9,7 @@ const Image = ({imageInfo}) => {
             <img src={url}/>
             <caption>{title}</caption>
             <caption>{date}</caption>
+            <button>Like</button>
         </article>
     )
 }
