@@ -1,7 +1,9 @@
 import React from 'react';
 import './Image.css';
 
-const Image = ({url, title, date}) => {
+const Image = ({imageInfo}) => {
+    const {url, title, date} = imageInfo;
+
     return (
         <article className='space-image'>
             <img src={url}/>
