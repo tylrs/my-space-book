@@ -7,7 +7,7 @@ const App = () => {
       <header className='header'>
         <button>Randomizer</button>
         <h1>My Space Book</h1>
-        <NavLink>My Liked Images</NavLink>
+        <NavLink to='/my-liked'>My Liked Images</NavLink>
       </header>
       
     </main>
