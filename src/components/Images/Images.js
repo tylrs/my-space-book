@@ -1,5 +1,6 @@
 import React from 'react';
 import './Images.css';
+import Image from '../Image/Image';
 
 const Images = ({imagesInfo}) => {
 
