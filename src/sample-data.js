@@ -1,4 +1,4 @@
-export default sampleData = [
+export const sampleData = [
     {
         "copyright": "AndrewStruder",
         "date": "2017-09-06",

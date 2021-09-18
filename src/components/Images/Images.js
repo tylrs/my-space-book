@@ -3,10 +3,7 @@ import './Images.css';
 import Image from '../Image/Image';
 
 const Images = ({imagesInfo}) => {
-
-    const images = imagesInfo.map(imageInfo => 
-            <Image imageInfo={imageInfo}/>
-        )
+    const images = imagesInfo.map(imageInfo => <Image imageInfo={imageInfo}/>)
 
     return (
         <section className='images'>
