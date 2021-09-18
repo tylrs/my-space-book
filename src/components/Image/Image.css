@@ -1,5 +1,9 @@
 .space-image {
+    align-items: center;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /* height: 80%;
     width: 80%; */
 }
