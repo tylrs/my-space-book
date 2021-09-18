@@ -1,14 +1,13 @@
-.space-image {
+.space-image-box {
     align-items: center;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* height: 80%;
-    width: 80%; */
+    padding: .5rem;
 }
 
-.space-image > img {
+.space-image-box > img {
     height: 50%;
     width: 50%;
 }
