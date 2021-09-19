@@ -15,6 +15,7 @@ const App = () => {
 
   const getImages = async () => {
     setError('')
+    setImages([])
     try {
       const imageData = await fetchImages()
       const cleanedImages = cleanImages(imageData)
