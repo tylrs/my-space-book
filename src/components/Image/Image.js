@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Image.css';
 
 const Image = ({imageInfo, likeOrUnlikeImage}) => {
+    const [likeMode, setLikeMode] = useState(true)
+
     const {url, title, date, id} = imageInfo;
 
     const handleClick = () => {
         const result = likeOrUnlikeImage(id)
-        console.log(result)
+        setLikeMode(result)
     }
 
     return (
@@ -14,7 +16,7 @@ const Image = ({imageInfo, likeOrUnlikeImage}) => {
             <img src={url} alt={title}/>
             <p>{title}</p>
             <p>{date}</p>
-            <button onClick={() => {handleClick()}}>Like</button>
+            <button onClick={() => {handleClick()}}>{likeMode ? 'Like' : 'Unlike'}</button>
         </article>
     )
 }
