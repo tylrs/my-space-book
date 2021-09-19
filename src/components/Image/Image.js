@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useEffect } from 'react/cjs/react.development';
 import './Image.css';
 
 const Image = ({imageInfo, likeOrUnlikeImage}) => {
@@ -18,13 +19,19 @@ const Image = ({imageInfo, likeOrUnlikeImage}) => {
 
     }
 
+    useEffect(() => {
+        setTimer('')
+    }, [])
+
     return (
         <article className='space-image-box'>
             <img src={url} alt={title}/>
-            {likeMessage && <p className='like-message'>{likeMode ? 'Unliked' : 'Liked'}</p>}
             <p>{title}</p>
             <p>{date}</p>
-            <button onClick={() => {handleClick()}}>{likeMode ? 'Like' : 'Unlike'}</button>
+            {likeMessage && <p className='like-message'>{likeMode ? 'Unliked' : 'Liked'}</p>}
+            <button className='like-button' onClick={() => {handleClick()}}>
+                {likeMode ? 'Like' : 'Unlike'}
+            </button>
         </article>
     )
 }
