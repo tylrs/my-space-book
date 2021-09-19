@@ -7,7 +7,7 @@ const Image = ({imageInfo, likeOrUnlikeImage}) => {
     const [likeMessage, setLikeMessage] = useState(false)
     const [timer, setTimer] = useState('')
 
-    const {url, title, date, id} = imageInfo;
+    const {url, title, date, id, liked} = imageInfo;
 
     const handleClick = () => {
         const result = likeOrUnlikeImage(id)
@@ -30,7 +30,7 @@ const Image = ({imageInfo, likeOrUnlikeImage}) => {
             <p>{date}</p>
             {likeMessage && <p className='like-message'>{likeMode ? 'Unliked' : 'Liked'}</p>}
             <button className='like-button' onClick={() => {handleClick()}}>
-                {likeMode ? 'Like' : 'Unlike'}
+                {liked ? 'Unlike' : 'Like'}
             </button>
         </article>
     )
