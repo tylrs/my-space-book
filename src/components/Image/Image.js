@@ -1,7 +1,7 @@
 import React from 'react';
 import './Image.css';
 
-const Image = ({imageInfo}) => {
+const Image = ({imageInfo, likeOrUnlikeImage}) => {
     const {url, title, date} = imageInfo;
 
     return (

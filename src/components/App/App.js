@@ -27,10 +27,12 @@ const App = () => {
       setLikedImageIds({id, ...likedImageIds})
       const foundImage = images.find(image => image.id === id)
       setLikedImages([foundImage, ...likedImages])
+      return 'Liked'
     } else {
       delete likedImageIds[id]
       const filteredImages = likedImages.filter(image => image.id !== id)
       setLikedImages([...filteredImages])
+      return 'Disliked'
     }
   }
 
@@ -40,13 +42,12 @@ const App = () => {
 
   return (
     <main>
-      {/* {console.log(images)} */}
       <header className='header'>
         <button onClick={() => {getImages()}}>Get New Images</button>
         <h1>My Space Book</h1>
         <NavLink to='/my-liked'>My Liked Images</NavLink>
       </header>
-      <Images imagesInfo={images}/>
+      <Images imagesInfo={images} likeOrUnlikeImage={likeOrUnlikeImage}/>
     </main>
   );
 }
