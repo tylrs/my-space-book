@@ -2,7 +2,8 @@ import './App.css';
 import { React, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Images from '../Images/Images';
-import { sampleData } from '../../sample-data';
+import { fetchImages } from '../../utils';
+// import { sampleData } from '../../sample-data';
 
 const App = () => {
   const [images, setImages] = useState([])
@@ -19,8 +20,8 @@ const App = () => {
   }
 
   useEffect(() => {
-
-  }) 
+    getImages()
+  }, []) 
 
   return (
     <main>
@@ -29,7 +30,7 @@ const App = () => {
         <h1>My Space Book</h1>
         <NavLink to='/my-liked'>My Liked Images</NavLink>
       </header>
-      <Images imagesInfo={sampleData}/>
+      <Images imagesInfo={images}/>
     </main>
   );
 }
