@@ -4,6 +4,8 @@ import { NavLink, Link, Switch, Route } from 'react-router-dom';
 import Images from '../Images/Images';
 import { fetchImages, cleanImages } from '../../utils';
 import { sampleData } from '../../sample-data';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
   const [images, setImages] = useState([]);
@@ -14,8 +16,8 @@ const App = () => {
   const getImages = async () => {
     setError('')
     try {
-      // const imageData = await fetchImages()
-      const cleanedImages = cleanImages(sampleData)
+      const imageData = await fetchImages()
+      const cleanedImages = cleanImages(imageData)
       setImages(cleanedImages)
     } catch(err) {
       setError(err)
@@ -39,7 +41,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    // getImages()
+    getImages()
   }, []) 
 
   return (
@@ -52,7 +54,7 @@ const App = () => {
             <NavLink to='/my-liked'>My Liked Images</NavLink>
           </header>
           {!images.length 
-            ? <p className='loading-message'>Loading...</p>
+            ? <div className='loading-message-container'><FontAwesomeIcon className="loading-message" icon={faGlobeAmericas}/></div>
             : <Images imagesInfo={images} likeOrUnlikeImage={likeOrUnlikeImage}/>
           }
         </main>
