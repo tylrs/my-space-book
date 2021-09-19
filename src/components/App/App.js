@@ -26,7 +26,7 @@ const App = () => {
   return (
     <main>
       <header className='header'>
-        <button>Get New Images</button>
+        <button onClick={() => {getImages()}}>Get New Images</button>
         <h1>My Space Book</h1>
         <NavLink to='/my-liked'>My Liked Images</NavLink>
       </header>
