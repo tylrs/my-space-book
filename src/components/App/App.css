@@ -10,6 +10,19 @@ main {
   justify-content: space-around;
 }
 
+.loading-message-container {
+  align-items: center;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+}
+
 .loading-message {
-  text-align: center;
+  animation:spin 1s infinite;
+  font-size: 8rem;
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
 }
