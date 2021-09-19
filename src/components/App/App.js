@@ -39,7 +39,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    getImages()
+    // getImages()
   }, []) 
 
   return (
@@ -51,7 +51,10 @@ const App = () => {
             <h1>My Space Book</h1>
             <NavLink to='/my-liked'>My Liked Images</NavLink>
           </header>
-          <Images imagesInfo={images} likeOrUnlikeImage={likeOrUnlikeImage}/>
+          {!images.length 
+            ? <p className='loading-message'>Loading...</p>
+            : <Images imagesInfo={images} likeOrUnlikeImage={likeOrUnlikeImage}/>
+          }
         </main>
       }/>
       <Route exact path='/my-liked' render={() => 
