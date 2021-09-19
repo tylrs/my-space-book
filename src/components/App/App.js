@@ -21,7 +21,7 @@ const App = () => {
       const cleanedImages = cleanImages(imageData)
       setImages(cleanedImages)
     } catch(err) {
-      setError(err)
+      setError(err.message)
     }
   }
 
@@ -54,7 +54,8 @@ const App = () => {
             <h1>My Space Book</h1>
             <NavLink to='/my-liked'>My Liked Images</NavLink>
           </header>
-          {!images.length 
+          {!!error && <p className='error-message'>{error}</p>}
+          {!images.length && !error
             ? <div className='loading-message-container'><FontAwesomeIcon className="loading-message" icon={faGlobeAmericas}/></div>
             : <Images imagesInfo={images} likeOrUnlikeImage={likeOrUnlikeImage}/>
           }
