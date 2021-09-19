@@ -16,6 +16,12 @@ export const cleanImages = (imageData) => {
     return imageData.map(image => {
         image.id = image.date
         image.liked = false;
-        return image;
+        return formatDate(image) 
     })
+}
+
+const formatDate = (image) => {
+    let date = image.date
+    image.date = new Date(date).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' })
+    return image
 }
