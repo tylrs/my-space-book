@@ -11,3 +11,10 @@ export const fetchImages = async () => {
         throw Error(err)
     }
 }
+
+export const cleanImages = (imageData) => {
+    return imageData.map((image, index) => {
+        image.id = index
+        return image;
+    })
+}
