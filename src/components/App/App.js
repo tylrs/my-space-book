@@ -1,5 +1,5 @@
 import './App.css';
-import { React, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link, Switch, Route } from 'react-router-dom';
 import Images from '../Images/Images';
 import { fetchImages, cleanImages } from '../../utils';
@@ -29,12 +29,12 @@ const App = () => {
       setLikedImageIds({...newIds})
       const foundImage = images.find(image => image.id === id)
       setLikedImages([foundImage, ...likedImages])
-      return 'Liked'
+      return false
     } else {
       delete likedImageIds[id]
       const filteredImages = likedImages.filter(image => image.id !== id)
       setLikedImages([...filteredImages])
-      return 'Disliked'
+      return true
     }
   }
 
