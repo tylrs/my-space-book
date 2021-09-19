@@ -6,7 +6,7 @@ const Image = ({imageInfo}) => {
 
     return (
         <article className='space-image-box'>
-            <img src={url}/>
+            <img src={url} alt={title}/>
             <p>{title}</p>
             <p>{date}</p>
             <button>Like</button>
