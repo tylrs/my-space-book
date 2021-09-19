@@ -24,7 +24,9 @@ const App = () => {
 
   const likeOrUnlikeImage = (id) => {
     if (!likedImageIds[id]) {
-      setLikedImageIds({id, ...likedImageIds})
+      const newIds = {...likedImageIds}
+      newIds[id] = id
+      setLikedImageIds({...newIds})
       const foundImage = images.find(image => image.id === id)
       setLikedImages([foundImage, ...likedImages])
       return 'Liked'
