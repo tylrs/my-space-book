@@ -1,6 +1,6 @@
 import './App.css';
 import { React, useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link, Switch, Route } from 'react-router-dom';
 import Images from '../Images/Images';
 import { fetchImages, cleanImages } from '../../utils';
 import { sampleData } from '../../sample-data';
@@ -43,14 +43,28 @@ const App = () => {
   }, []) 
 
   return (
-    <main>
-      <header className='header'>
-        <button onClick={() => {getImages()}}>Get New Images</button>
-        <h1>My Space Book</h1>
-        <NavLink to='/my-liked'>My Liked Images</NavLink>
-      </header>
-      <Images imagesInfo={images} likeOrUnlikeImage={likeOrUnlikeImage}/>
-    </main>
+    <Switch>
+      <Route exact path='/' render={() => 
+        <main>
+          <header className='header'>
+            <button onClick={() => {getImages()}}>Get New Images</button>
+            <h1>My Space Book</h1>
+            <NavLink to='/my-liked'>My Liked Images</NavLink>
+          </header>
+          <Images imagesInfo={images} likeOrUnlikeImage={likeOrUnlikeImage}/>
+        </main>
+      }/>
+      <Route exact path='/my-liked' render={() => 
+        <main>
+          <header className='header'>
+            <Link to='/'>Back</Link>
+            <h1>My Space Book</h1>
+            <h2>My Liked Images</h2>
+          </header>
+          <Images imagesInfo={likedImages} likeOrUnlikeImage={likeOrUnlikeImage}/>
+        </main>
+      }/>
+    </Switch>
   );
 }
 
