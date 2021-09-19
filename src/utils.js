@@ -13,8 +13,8 @@ export const fetchImages = async () => {
 }
 
 export const cleanImages = (imageData) => {
-    return imageData.map((image, index) => {
-        image.id = index + 1
+    return imageData.map(image => {
+        image.id = image.date
         return image;
     })
 }
