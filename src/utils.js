@@ -15,6 +15,7 @@ export const fetchImages = async () => {
 export const cleanImages = (imageData) => {
     return imageData.map(image => {
         image.id = image.date
+        image.liked = false;
         return image;
     })
 }

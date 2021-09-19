@@ -31,12 +31,24 @@ const App = () => {
       newIds[id] = id
       setLikedImageIds({...newIds})
       const foundImage = images.find(image => image.id === id)
+      foundImage.liked = true;
       setLikedImages([foundImage, ...likedImages])
       return false
     } else {
       delete likedImageIds[id]
-      const filteredImages = likedImages.filter(image => image.id !== id)
+      const filteredImages = likedImages.filter(image => {
+        return (
+          image.id !== id
+        )
+      })
+      const newImages = images.map(image => {
+        if (image.id === id) {
+          image.liked = false
+        }
+        return image
+      })
       setLikedImages([...filteredImages])
+      setImages(newImages)
       return true
     }
   }
