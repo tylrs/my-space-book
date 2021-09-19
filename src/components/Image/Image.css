@@ -1,0 +1,13 @@
+.space-image-box {
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.space-image-box > img {
+    border-radius: 8px;
+    height: 14rem;
+    width: 14rem;
+}
