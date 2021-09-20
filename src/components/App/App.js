@@ -80,7 +80,10 @@ const App = () => {
             <h1>My Liked Images</h1>
             <div></div>
           </header>
-          <Images imagesInfo={likedImages} likeOrUnlikeImage={likeOrUnlikeImage}/>
+          {!images.length && !error 
+            ? <Images imagesInfo={likedImages} likeOrUnlikeImage={likeOrUnlikeImage}/>
+            : <p className='error-message'>No Saved Images. Go back and add some!</p>
+          }
         </main>
       }/>
     </Switch>
