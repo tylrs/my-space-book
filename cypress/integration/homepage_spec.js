@@ -8,6 +8,12 @@ describe('Homepage', () => {
         .visit('http://localhost:3000/')
     })
 
+    it('Should show a loading icon while waiting for images to load', () => {
+        cy
+            .get('.loading-message')
+            .should('be.visible')
+    })
+
     it('Should be able to visit the homepage and see a url, title images, and buttons', () => {
         cy
             .url().should('include', 'http://localhost:3000/')
