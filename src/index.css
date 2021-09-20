@@ -8,6 +8,14 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background: url('./assets/galaxy2.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
