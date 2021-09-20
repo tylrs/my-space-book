@@ -5,7 +5,8 @@ main {
 
 .header {
   align-items: center;
-  border-bottom: 1px solid black;
+  background-color: hsla(0, 0%, 90%, .4);
+  border-bottom: 1px solid white;
   display: flex;
   justify-content: space-around;
 }
