@@ -77,8 +77,8 @@ const App = () => {
         <main>
           <header className='header'>
             <Link className='back-button' to='/'>Back</Link>
-            <h1>My Space Book</h1>
-            <h2>My Liked Images</h2>
+            <h1>My Liked Images</h1>
+            <div></div>
           </header>
           <Images imagesInfo={likedImages} likeOrUnlikeImage={likeOrUnlikeImage}/>
         </main>
