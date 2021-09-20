@@ -95,5 +95,19 @@ describe('Homepage', () => {
             .contains('Liked')
             .get(':nth-child(4) > .like-button')
             .contains('Unlike')
-        })
+    })
+    
+    it('Should be able to Unlike an image, see a success message, and see a like button instead of an unlike button', () => {
+        cy
+            .wait('@getImages')
+            .get(':nth-child(1) > .like-button')
+            .click()
+            .get(':nth-child(1) > .like-button')
+            .click()
+            .get('.like-message')
+            .contains('Unliked')
+            .get(':nth-child(1) > .like-button')
+            .contains('Like')
+
+    })
 })
