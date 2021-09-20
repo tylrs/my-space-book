@@ -5,7 +5,7 @@ main {
 
 .header {
   align-items: center;
-  background-color: hsla(0, 0%, 90%, .4);
+  /* background-color: hsla(0, 0%, 90%, .4); */
   border-bottom: 1px solid white;
   display: flex;
   justify-content: space-around;
@@ -13,9 +13,23 @@ main {
 
 h1 {
   background-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(23,176,250,1) 100%);
-  /* background-image: linear-gradient(90deg, rgba(110,62,191,1) 0%, rgba(23,92,250,1) 100%); */
   background-clip: text;
   color: transparent;
+}
+
+.get-images, .liked-images-nav {
+  background-color: rgba(36,23,250,.38);
+  border: 1px solid white;
+  border-radius: 13px;
+  color: white;
+  cursor: pointer;
+  font-size: .9rem;
+  padding: .5rem;
+  text-align: center;
+}
+
+.liked-images-nav {
+  text-decoration: none;
 }
 
 .loading-message-container {
