@@ -76,7 +76,7 @@ const App = () => {
       <Route exact path='/my-liked' render={() => 
         <main>
           <header className='header'>
-            <Link to='/'>Back</Link>
+            <Link className='back-button' to='/'>Back</Link>
             <h1>My Space Book</h1>
             <h2>My Liked Images</h2>
           </header>
