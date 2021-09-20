@@ -26,8 +26,8 @@ const Image = ({imageInfo, likeOrUnlikeImage}) => {
     return (
         <article className='space-image-box'>
             <img src={url} alt={title}/>
-            <p>{title}</p>
-            <p>{date}</p>
+            <p className='image-title'>{title}</p>
+            <p>Date of Capture: {date}</p>
             {likeMessage && <p className='like-message'>{likeMode ? 'Unliked' : 'Liked'}</p>}
             <button className='like-button' onClick={() => {handleClick()}}>
                 {liked ? 'Unlike' : 'Like'}
