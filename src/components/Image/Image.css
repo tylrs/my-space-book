@@ -1,6 +1,6 @@
 .space-image-box {
     align-items: center;
-    background-color: hsla(0, 0%, 90%, .4);
+    background-color: hsl(0deg 0% 0% / 51%);
     border: 1px solid white;
     border-radius: 10px;
     color: white;
