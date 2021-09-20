@@ -15,7 +15,7 @@ const Image = ({imageInfo, likeOrUnlikeImage}) => {
         setLikeMessage(true)
         setTimer(setTimeout(() => {
             setLikeMessage(false)
-        }, 3000))
+        }, 2000))
 
     }
 
@@ -29,9 +29,9 @@ const Image = ({imageInfo, likeOrUnlikeImage}) => {
             <p className='image-title'>{title}</p>
             <p>Date of Capture: {date}</p>
             {likeMessage && <p className='like-message'>{likeMode ? 'Unliked' : 'Liked'}</p>}
-            <button className='like-button' onClick={() => {handleClick()}}>
+            {!likeMessage && <button className='like-button' onClick={() => {handleClick()}}>
                 {liked ? 'Unlike' : 'Like'}
-            </button>
+            </button>}
         </article>
     )
 }
