@@ -181,6 +181,15 @@ describe('Homepage', () => {
             .get(':nth-child(3)')
             .contains('Unlike')
     })
+
+    it('Should show a message if there are no liked images', () => {
+        cy
+            .wait('@getImages')
+            .get('.liked-images-nav')
+            .click()
+            .get('.error-message')
+            .contains('No Saved Images. Go back and add some!')
+    })
 })
 
 describe('Homepage sad path', () => {
