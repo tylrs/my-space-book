@@ -18,7 +18,18 @@
 }
 
 .like-button {
-    z-index: 1;
+  background-color: rgb(0 8 255 / 36%);
+  border: 1px solid white;
+  border-radius: 13px;
+  color: white;
+  cursor: pointer;
+  padding: .5rem;
+  text-align: center;
+  width: 5rem;
+}
+
+.like-button:hover {
+  background-color: rgb(0 8 255 / 62%);
 }
 
 .like-message {
