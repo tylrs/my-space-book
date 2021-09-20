@@ -5,7 +5,6 @@ main {
 
 .header {
   align-items: center;
-  /* background-color: hsla(0, 0%, 90%, .4); */
   border-bottom: 1px solid white;
   display: flex;
   justify-content: space-around;
@@ -53,8 +52,10 @@ h1:hover {
 }
 
 .error-message {
+  background-color: hsl(0deg 0% 0% / 51%);
   color: red;
   font-size: 2rem;
+  padding: 2rem;
   text-align: center;
 }
 
