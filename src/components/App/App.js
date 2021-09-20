@@ -62,9 +62,9 @@ const App = () => {
       <Route exact path='/' render={() => 
         <main>
           <header className='header'>
-            <button onClick={() => {getImages()}}>Get New Images</button>
+            <button className='get-images' onClick={() => {getImages()}}>Get New Images</button>
             <h1>My Space Book</h1>
-            <NavLink to='/my-liked'>My Liked Images</NavLink>
+            <NavLink className='liked-images-nav' to='/my-liked'>My Liked Images</NavLink>
           </header>
           {!!error && <p className='error-message'>{error}</p>}
           {!images.length && !error
