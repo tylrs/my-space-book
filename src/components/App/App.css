@@ -17,7 +17,7 @@ h1 {
   color: transparent;
 }
 
-.get-images, .liked-images-nav {
+.get-images, .liked-images-nav, .back-button {
   background-color: rgba(36,23,250,.38);
   border: 1px solid white;
   border-radius: 13px;
@@ -28,11 +28,11 @@ h1 {
   text-align: center;
 }
 
-.liked-images-nav {
+.liked-images-nav, .back-button {
   text-decoration: none;
 }
 
-.get-images:hover, .liked-images-nav:hover {
+.get-images:hover, .liked-images-nav:hover, .back-button:hover {
   background-color: rgb(83 73 255 / 61%);
 }
 
