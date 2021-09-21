@@ -13,11 +13,16 @@ export const fetchImages = async () => {
 }
 
 export const cleanImages = (imageData) => {
-    return imageData.map(image => {
-        image.id = image.date
-        image.liked = false;
-        return formatDate(image) 
+    const cleanedImages = [];
+     imageData.forEach(image => {
+         if (image.media_type === 'image') {
+            image.id = image.date
+            image.liked = false;
+            image = formatDate(image) 
+            cleanedImages.push(image)
+         }
     })
+    return cleanedImages
 }
 
 const formatDate = (image) => {
