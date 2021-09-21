@@ -10,12 +10,13 @@ import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 const App = () => {
   const [images, setImages] = useState([]);
   const [likedImages, setLikedImages] = useState([]);
-  const [likedImageIds, setLikedImageIds] = useState({});
   const [error, setError] = useState('');
 
   const getImages = async () => {
     setError('')
     setImages([])
+    const liked = JSON.parse(localStorage.getItem('likedImages'))
+    if (liked) setLikedImages(liked)
     try {
       const imageData = await fetchImages()
       const cleanedImages = cleanImages(imageData)
@@ -25,32 +26,23 @@ const App = () => {
     }
   }
 
-  const likeOrUnlikeImage = (id) => {
-    if (!likedImageIds[id]) {
-      const newIds = {...likedImageIds}
-      newIds[id] = id
-      setLikedImageIds({...newIds})
-      const foundImage = images.find(image => image.id === id)
-      foundImage.liked = true;
-      setLikedImages([foundImage, ...likedImages])
-      return false
-    } else {
-      delete likedImageIds[id]
-      const filteredImages = likedImages.filter(image => {
-        return (
-          image.id !== id
-        )
-      })
-      const newImages = images.map(image => {
-        if (image.id === id) {
-          image.liked = false
-        }
-        return image
-      })
-      setLikedImages([...filteredImages])
-      setImages(newImages)
-      return true
-    }
+  const likeImage = (id) => {
+    const foundImage = images.find(image => image.id === id)
+    foundImage.liked = true;
+    const newLiked = [foundImage, ...likedImages]
+    setLikedImages(newLiked)
+    localStorage.setItem('likedImages', JSON.stringify(newLiked))
+  }
+
+  const unlikeImage = (id) => {
+    const filteredImages = likedImages.filter(image => image.id !== id)
+    const newImages = images.map(image => {
+      if (image.id === id) image.liked = false
+      return image
+    })
+    setLikedImages([...filteredImages])
+    localStorage.setItem('likedImages', JSON.stringify([...filteredImages]))
+    setImages(newImages)
   }
 
   useEffect(() => {
@@ -69,7 +61,7 @@ const App = () => {
           {!!error && <p className='error-message'>{error}</p>}
           {!images.length && !error
             ? <div className='loading-message-container'><FontAwesomeIcon className="loading-message" icon={faGlobeAmericas}/></div>
-            : <Images imagesInfo={images} likeOrUnlikeImage={likeOrUnlikeImage}/>
+            : <Images imagesInfo={images} likeImage={likeImage} unlikeImage={unlikeImage}/>
           }
         </main>
       }/>
@@ -81,7 +73,7 @@ const App = () => {
             <div></div>
           </header>
           {likedImages.length && !error 
-            ? <Images imagesInfo={likedImages} likeOrUnlikeImage={likeOrUnlikeImage}/>
+            ? <Images imagesInfo={likedImages} likeImage={likeImage} unlikeImage={unlikeImage}/>
             : <p className='error-message'>No Saved Images. Go back and add some!</p>
           }
         </main>
