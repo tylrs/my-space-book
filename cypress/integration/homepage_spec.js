@@ -223,7 +223,7 @@ describe('Homepage', () => {
     })
 })
 
-describe('Homepage sad path', () => {
+describe('Homepage sad paths', () => {
     it('Should display an error if the initial fetch fails', () => {
         cy
             .intercept('GET', 'https://api.nasa.gov/planetary/apod?api_key=iFKelpSH9TLhm1UyPVmKoRwpzbZm9mZWe9WeDBRy&count=9', {
@@ -233,5 +233,19 @@ describe('Homepage sad path', () => {
             .visit('http://localhost:3000/')
             .get('.error-message')
             .contains('Error: Hmm looks like those images are lost in space...try refreshing the page!')
+    })
+
+    it('Should filter out videos from the fetch', () => {
+        cy
+            .intercept('GET', 'https://api.nasa.gov/planetary/apod?api_key=iFKelpSH9TLhm1UyPVmKoRwpzbZm9mZWe9WeDBRy&count=9', {
+                ok: true,
+                statusCode: 200,
+                fixture: 'sampleImagesWithVideo'
+            }).as('getImagesWithVideos')
+            .visit('http://localhost:3000/')
+            .wait('@getImagesWithVideos')
+            .get('.images')
+            .children()
+            .should('have.length', 7)
     })
 })
