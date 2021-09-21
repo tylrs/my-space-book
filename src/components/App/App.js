@@ -78,6 +78,14 @@ const App = () => {
           }
         </main>
       }/>
+      <Route path = '/*' render={() => 
+          <main>
+            <header className='header'>
+              <NavLink className='error-title' to='/'>My Space Book</NavLink>
+            </header>
+            <p className='error-message'>404 page not found. Click title above.</p>
+          </main>
+      }/>
     </Switch>
   );
 }
