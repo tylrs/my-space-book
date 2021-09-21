@@ -1,0 +1,11 @@
+version: 2.1
+
+orbs:
+  cypress: cypress-io/cypress@1.29.0
+
+workflows:
+  build:
+      jobs:
+        - cypress/install
+        - cypress/run:
+            start: npm start
