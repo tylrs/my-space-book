@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link, Switch, Route } from 'react-router-dom';
 import Images from '../Images/Images';
 import { fetchImages, cleanImages } from '../../utils';
-import { sampleData } from '../../sample-data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 
