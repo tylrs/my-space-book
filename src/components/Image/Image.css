@@ -1,22 +1,22 @@
 .space-image-box {
-    align-items: center;
-    background-color: hsl(0deg 0% 0% / 51%);
-    border: 1px solid white;
-    border-radius: 10px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-height: 35rem;
-    padding-bottom: 1rem;
-    text-align: center;
+  align-items: center;
+  background-color: hsl(0deg 0% 0% / 51%);
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 35rem;
+  padding-bottom: 1rem;
+  text-align: center;
 }
 
 .space-image-box > img {
-    border-radius: 8px 8px 0px 0px;
-    height: auto;
-    max-height: 70%;
-    width: 100%;
+  border-radius: 8px 8px 0px 0px;
+  height: auto;
+  max-height: 70%;
+  width: 100%;
 }
 
 
@@ -40,33 +40,33 @@
 }
 
 .like-message {
-    animation: slide 2s;
-    border-radius: 5px;
-    color: red;
-    font-size: 2rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    opacity: 1;
-    z-index: 2;
+  animation: slide 2s;
+  border-radius: 5px;
+  color: red;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 1;
+  z-index: 2;
 }
 
 @keyframes slide {
-    from {
-        transform: scale(0.1) translateY(300px);
-        opacity: 0;
-      }
-  
-      30% {
-        transform: scale(.9) translateY(0px);
-        opacity: 1;
-      }
-  
-      70% {
-        transform: scale(.8) translateY(0px);
-        opacity: 1;
-      }
-      to {
-        transform: scale(.7) translateY(0px);
-        opacity: 0;
-      }
+  from {
+      transform: scale(0.1) translateY(300px);
+      opacity: 0;
+    }
+
+    30% {
+      transform: scale(.9) translateY(0px);
+      opacity: 1;
+    }
+
+    70% {
+      transform: scale(.8) translateY(0px);
+      opacity: 1;
+    }
+    to {
+      transform: scale(.7) translateY(0px);
+      opacity: 0;
+    }
 }
