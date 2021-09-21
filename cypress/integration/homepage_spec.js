@@ -8,12 +8,6 @@ describe('Homepage', () => {
         .visit('http://localhost:3000/')
     })
 
-    it('Should show a loading icon while waiting for images to load', () => {
-        cy
-            .get('.loading-message')
-            .should('be.visible')
-    })
-
     it('Should be able to visit the homepage and see a url, title images, and buttons', () => {
         cy
             .url().should('include', 'http://localhost:3000/')
@@ -248,4 +242,18 @@ describe('Homepage sad paths', () => {
             .children()
             .should('have.length', 7)
     })
+
+    it('Should show a loading icon while waiting for images to load', () => {
+        cy  
+            .server()
+            .route({
+                url: 'https://api.nasa.gov/planetary/apod?api_key=iFKelpSH9TLhm1UyPVmKoRwpzbZm9mZWe9WeDBRy&count=9',
+                onRequest: () => {
+                cy
+                    .get('.loading-message')
+                    .should('be.visible')
+            }})
+          
+    })
+    
 })
