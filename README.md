@@ -9,7 +9,7 @@
 - [Sample Screenshots](#sample-screenshots-and-gifs)
 - [Wireframes](#wireframes)
 - [Future Additions](#future-additions)
-- [Authors](#authors)
+- [Authors](#author)
 
 ## Overview 
 
@@ -57,7 +57,7 @@ To view this application on your local device:
 ---
 
 ## Wireframes
--  All Wireframes: [https://drive.google.com/file/d/1h38AQIg6QRps_6UYmAFIG7YhWmZh9VzC/view?usp=sharing](https://drive.google.com/file/d/1h38AQIg6QRps_6UYmAFIG7YhWmZh9VzC/view?usp=sharing)
+-  Homepage Wireframe: [https://drive.google.com/file/d/1h38AQIg6QRps_6UYmAFIG7YhWmZh9VzC/view?usp=sharing](https://drive.google.com/file/d/1h38AQIg6QRps_6UYmAFIG7YhWmZh9VzC/view?usp=sharing)
 
 
 ## Future Additions
