@@ -190,6 +190,18 @@ describe('Homepage', () => {
             .get('.error-message')
             .contains('No Saved Images. Go back and add some!')
     })
+
+    it('Should show liked images even after page refreshes', () => {
+        cy
+            .wait('@getImages')
+            .get(':nth-child(1) > .like-button')
+            .click()
+            .get('.liked-images-nav')
+            .click()
+            .reload()
+            .get('.images > :nth-child(1)')
+            .contains('The Climber and the Eclipse')
+    })
 })
 
 describe('Homepage sad path', () => {
