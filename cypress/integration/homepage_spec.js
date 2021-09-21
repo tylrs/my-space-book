@@ -200,6 +200,27 @@ describe('Homepage', () => {
             .get('.images > :nth-child(1)')
             .contains('The Climber and the Eclipse')
     })
+
+    it('Should redirect to a 404 page if a bad URL is entered', () => {
+        cy
+            .wait('@getImages')
+            .visit('http://localhost:3000/banana')
+            .get('.error-message')
+            .contains('404 page not found. Click title above.')
+    })
+
+    it('Should be able to click on the title from a 404 page to get back to the homepage', () => {
+        cy
+            .wait('@getImages')
+            .visit('http://localhost:3000/banana')
+            .get('.error-message')
+            .contains('404 page not found. Click title above.')
+            .get('.error-title')
+            .click()
+            .get('.images')
+            .children()
+            .should('have.length', 9)
+    })
 })
 
 describe('Homepage sad path', () => {
