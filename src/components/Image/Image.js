@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useEffect } from 'react/cjs/react.development';
 import './Image.css';
 
-const Image = ({imageInfo, likeOrUnlikeImage}) => {
+const Image = ({imageInfo, likeImage, unlikeImage}) => {
     const [likeMode, setLikeMode] = useState(true)
     const [likeMessage, setLikeMessage] = useState(false)
     const [timer, setTimer] = useState('')
@@ -10,8 +10,13 @@ const Image = ({imageInfo, likeOrUnlikeImage}) => {
     const {url, title, date, id, liked} = imageInfo;
 
     const handleClick = () => {
-        const result = likeOrUnlikeImage(id)
-        setLikeMode(result)
+        if (!liked) {
+            likeImage(id)
+            setLikeMode(false)
+        } else {
+            unlikeImage(id)
+            setLikeMode(true)
+        }
         setLikeMessage(true)
         setTimer(setTimeout(() => {
             setLikeMessage(false)
