@@ -6,7 +6,6 @@
 - [Overview](#overview)
 - [Installation & Viewing](#installation-and-viewing)
 - [Technologies Used](#technologies-used)
-- [Features](#features)
 - [Sample Screenshots](#sample-screenshots-and-gifs)
 - [Wireframes](#wireframes)
 - [Future Additions](#future-additions)
@@ -14,6 +13,12 @@
 
 ## Overview 
 
+-  This is an application which fetches images from NASA's Astronomy Picture of the Day API [https://api.nasa.gov/](https://api.nasa.gov/)
+-  Features:
+    -  Users can view 9 random images at a time
+    -  Users can choose to fetch more images
+    -  Users can "like" images from the API which will persist on page reload
+    -  Uses can "unlike" images they have previously "liked"
 
 ## Installation and Viewing 
 
@@ -36,11 +41,6 @@ To view this application on your local device:
     <img alt="Cypress Badge" src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" />
 </p>
 
-## Features
-
--  Users can view random images from NASA's APOD API
--  User can save images from the API which will persist on page reload
-
 ---
 ## Sample Screenshots and GIFs
   
@@ -51,11 +51,14 @@ To view this application on your local device:
 
 ## Wireframes
 
--  All Wireframes: []()
+-  All Wireframes: [https://drive.google.com/file/d/1h38AQIg6QRps_6UYmAFIG7YhWmZh9VzC/view?usp=sharing](https://drive.google.com/file/d/1h38AQIg6QRps_6UYmAFIG7YhWmZh9VzC/view?usp=sharing)
 
 
 ## Future Additions
-  * 
+  * Allow user to choose from a range of dates to fetch for images
+  * Allow user to search for images
+  * Allow user to request an image from a specific date
+  * Allow a user to view videos 
 
 
 ### Author
