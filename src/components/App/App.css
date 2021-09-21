@@ -19,6 +19,14 @@ h1:hover {
   cursor: default;
 }
 
+.error-title {
+  text-decoration: none;
+}
+
+.error-title > h1:hover {
+  cursor: pointer;
+}
+
 .get-images, .liked-images-nav, .back-button {
   background-color: rgba(36,23,250,.38);
   border: 1px solid white;
