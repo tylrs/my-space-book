@@ -43,14 +43,20 @@ To view this application on your local device:
 
 ---
 ## Sample Screenshots and GIFs
-  
-  ![Dashboard]()
 
+  <h3>Homescreen:</h3>
+  <img width="1179" alt="Homescreen Screenshot" src="https://user-images.githubusercontent.com/77019930/134242442-8a8e0616-2b88-4842-8126-cd5b33f6d8a2.png">
+  
+  <h3>Liked Images:</h3>
+  <img width="1178" alt="Liked Images Screenshot" src="https://user-images.githubusercontent.com/77019930/134242261-152e226a-4478-41ba-ace6-c6b86820421d.png">
+  
+  <h3>Demo:<h3/>
+
+  ![my-space-book-demo](https://media.giphy.com/media/hifw67Ad7lBQXT2G8J/giphy.gif)
 
 ---
 
 ## Wireframes
-
 -  All Wireframes: [https://drive.google.com/file/d/1h38AQIg6QRps_6UYmAFIG7YhWmZh9VzC/view?usp=sharing](https://drive.google.com/file/d/1h38AQIg6QRps_6UYmAFIG7YhWmZh9VzC/view?usp=sharing)
 
 
