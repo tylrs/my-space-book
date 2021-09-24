@@ -5,3 +5,16 @@
     height: 90vh;
     padding: 2rem;
 }
+
+@media only screen and (max-width: 780px) {
+    .images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .images {
+        display: flex;
+        flex-direction: column;
+    }
+}
